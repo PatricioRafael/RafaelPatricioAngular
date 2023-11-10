@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Playfair+Display:wght@500&display=swap');
+
+:root {
+    --fond:#a6a6a6;
+    --zero:#282828;
+    --first:#ac3a3a;
+    --second: #5e2121;
+    --withe: #fff;
+    --black: #000;
+    --footer: #8c8c8c;
+    --facebook: #3B5998;
+    --twitter:#1DA1f2;
+    --vimeo:#21B7EA;
+    --youtube:#F80201;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #a6a6a6;
+    font-family: 'Playfair Display', serif;
+}
+
+.sub-header {
+    height: 70px;
+    background-color: #282828;
+    padding: 20px 50px 20px 50px;
+}
+
+#logo1 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+#logo2 {
+    margin: 0;
+    padding: 0;
+    color: #ac3a3a;
+}
+
+.title {
+    color: #5e2121;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#title {
+    display: flex;
+    position: absolute;
+}
+
+.nav {
+    margin-top: 20px;
+}
+
+.nav > a {
+    color: #fff;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+.nav > a:hover {
+    color: #ac3a3a;
+}
+
+.title > button {
+    background-color: #282828;
+    color: #fff;
+    border: 1px solid #fff;
+    margin-left: 10px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+}
+
+.title > button:hover {
+    background-color: #ac3a3a;
+    color: var(--zero);
+    border: 1px solid var(--zero);  
+    box-shadow: 1px 1px 5px 0px #fff;
+}
+
+.banner {
+    width: 100%;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.24) 0%, rgba(172, 58, 58, 0.799) 100%), url(/assets/images/RafaelPatricio1Parcial.jpg) no-repeat center;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#big {
+    font-size: 50px;
+    margin-bottom: 3px;
+}
+
+#dir {
+    border: 3px solid #fff;
+    padding: 10px 25px 10px 25px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+#dir:hover {
+    color: #ac3a3a;
+    border: 3px solid #ac3a3a;
+    box-shadow: 5px 5px 5px 0px #fff;
+}
+
+.titu {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.code {
+    background-color: #282828;
+    color: #fff;
+    margin-top: 30px;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px 0px #000;
+}
+
+.code > h1 {
+    text-align: center;
+}
+
+#footer {
+    margin-top: 30px;
+    background-color: #8c8c8c;
+    padding: 30px 100px 30px 100px;
+}
+
+#colum {
+    display: flex;
+    justify-content:flex-start ;
+
+}
+
+.colum {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.apps > i{  
+    font-size: 40px;
+    margin: 10px;
+}
+
+#facebook {
+    color: #3B5998;
+}
+
+#twitter {
+    color: #1DA1f2;
+}
+
+#vimeo {
+    color: #21B7EA;
+}
+
+#youtube {
+    color: #F80201;
+}
+
+.name {
+    position: absolute;
+    margin-top: 50px;
+}
+
+#name {
+    color: #5e2121;
+    position: absolute;
+    margin-left: 50px;
+}
+
+#lyneHr {
+    width: 1200px;
+    height: 2px;
+    background-color: #282828;
+}
+
+.final {
+    display: flex;
+    justify-content: center;
+}
+
+.final > nav a{
+    color: #000;
+}
+
+.final > nav a:not(:last-child) {
+    padding: 0 50px 0 0 ;
+    border-right: 1px solid #000;
+}
