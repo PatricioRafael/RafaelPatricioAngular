@@ -1,19 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Playfair+Display:wght@500&display=swap');
 
-:root {
-    --fond:#a6a6a6;
-    --zero:#282828;
-    --first:#ac3a3a;
-    --second: #5e2121;
-    --withe: #fff;
-    --black: #000;
-    --footer: #8c8c8c;
-    --facebook: #3B5998;
-    --twitter:#1DA1f2;
-    --vimeo:#21B7EA;
-    --youtube:#F80201;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -202,4 +188,70 @@ body {
 .final > nav a:not(:last-child) {
     padding: 0 50px 0 0 ;
     border-right: 1px solid #000;
+}
+
+.input {
+    text-align: center;
+    border: 1px solid;
+    width: 250px;
+    height: 200px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #282828;
+    color: #fff;
+}
+
+.table {
+    margin: auto;
+    margin-top: 30px;
+    border-collapse: collapse;
+    width: 30%;
+    text-align: center;
+}
+
+.nom {
+    margin-bottom: 20px;
+    background-color: #a6a6a6;
+}
+
+.enviar {
+    background-color: #a6a6a6;
+    border: none;
+    color: #282828;
+}
+
+.enviar:hover {
+    background-color: #5e2121;
+    color: #fff;
+}
+
+.table > thead {
+    background-color: #282828;
+    color: #fff;
+}
+
+.table > tbody {
+    background-color: 	#a6a6a6;
+}
+
+.edit {
+    background-color: #a6a6a6;
+    border: none;
+    color: #282828;
+    margin-right: 10px;
+}
+
+.edit:hover {
+    background-color: #282828;
+    color: #fff;
+}
+
+.elim {
+    background-color: #282828;
+    color: #a6a6a6;
+    margin-right: 10px;
 }

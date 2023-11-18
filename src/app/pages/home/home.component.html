@@ -22,7 +22,7 @@
     </div>
 </header>
 <section class="banner">
-    <h1 id="big">PRIMER PARCIAL</h1>
+    <h1 id="big">SEGUNDO PARCIAL</h1>
     <h4>
         RAFAEL ANTONIO PATRICIO AYLLON
     </h4>
@@ -30,19 +30,25 @@
         <a href="#" id="dir">CLICK</a>
     </nav>
 </section>
-<div>
-    <form>
+<div class="input">
+    <form *ngIf="!isEditing">
         <label>Nombres</label><br>
-        <input type="text" [(ngModel)]="name" name="name"><br>
-        {{name}}
+        <input class="nom" type="text" [(ngModel)]="name" name="name" ><br>
+        <label>Abrev</label><br>
+        <input class="nom" type="text" [(ngModel)]="abrev" name="abrev"><br>
+        <input class="enviar" type="button" value="Enviar" (click)="save()">
+    </form>
+    <form *ngIf="isEditing">
+        <label>Nombres</label><br>
+        <input class="nom" type="text" [(ngModel)]="editRow.name" name="name"><br>
         <label>Abrev:</label><br>
-        <input type="text" [(ngModel)]="abrev" name="abrev"><br>
-        {{abrev}}
-        <input type="button" value="Enviar" (click)="save()">
+        <input class="nom" type="text" [(ngModel)]="editRow.abrev" name="abrev"><br>
+        <input class="edit" type="button" value="Guardar" (click)="guardar()">
+        <input class="edit" type="button" value="Cancelar" (click)="cancelarEdicion()">
     </form>
 </div>
 <div>
-    <table border="1">
+    <table class="table" border="1">
         <thead>
             <tr>
                 <th>Nro</th>
@@ -53,17 +59,29 @@
         </thead>
         <tbody>
             <tr *ngFor="let row of dataSource; index as nro">
-                <th>{{nro + 1}}</th>
-                <th>{{row.abrev}}</th>
-                <th>{{row.name}}</th>
-                <th>
-                    <button (click)="actualizar(row.id)">Editar</button>
-                    <button (click)="borrar(row.id)">Eliminar</button>
-                </th>
+                <td>{{nro + 1}}</td>
+                <td>
+                    {{!isEditing || row.id !== editRow?.id ? row.abrev : ''}}
+                </td>
+                <td>
+                    {{!isEditing || row.id !== editRow?.id ? row.name : ''}}
+                </td>
+                <td>
+                    <ng-container *ngIf="!isEditing || row.id !== editRow?.id; else editMode">
+                        <button class="elim" (click)="actualizar(row.id)">Editar</button>
+                        <button class="elim" (click)="borrar(row.id)">Eliminar</button>
+                    </ng-container>
+                    <ng-template #editMode>
+                        <button class="elim" (click)="guardar()">Guardar</button>
+                        <button class="elim" (click)="cancelarEdicion()">Cancelar</button>
+                    </ng-template>
+                </td>
             </tr>
         </tbody>
+
     </table>
 </div>
+
 <main>
     <h1 class="titu">
         LABORATORIOS

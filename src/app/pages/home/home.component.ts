@@ -6,65 +6,66 @@ import { LanguagesService } from 'src/app/services/languages.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   
-  name:string = "Python";
-  abrev:string = "Py";
-  dataSource:any = [];
+  name: string = "";
+  abrev: string = "";
+  dataSource: any = [];
 
-  constructor(private language: LanguagesService){}
+  isEditing = false;
+  editRow: any = null;
 
-  ngOnInit()
-  {
-    this.language.getListLanguges().subscribe( (data) => {
-      for(var key in data)
-      {
-        var row = {id:key, abrev: data[key].abrev, name: data[key].name}
-        this.dataSource.push(row)
-      }
-      console.log(this.dataSource)
-    } )
+  constructor(private language: LanguagesService) {}
+
+  ngOnInit() {
+    this.loadLanguages();
   }
 
-  save()
-  {
-    let body = 
-    {
+  loadLanguages() {
+    this.language.getListLanguges().subscribe((data) => {
+      this.dataSource = Object.keys(data).map(key => ({ id: key, ...data[key] }));
+    });
+  }
+
+  save() {
+    let body = {
       name: this.name,
       abrev: this.abrev
-    }
-    this.language.postLanguage(body).subscribe( (data) => {
-      if(data!=null)
-      {
-        window.location.reload();
+    };
+    this.language.postLanguage(body).subscribe((data) => {
+      if (data != null) {
+        this.loadLanguages();
       }
-    })
+    });
   }
 
-  borrar(id:string){
-    let aux = confirm("Esta Seguro de Borrar")
-    if(!aux) return
-    this.language.deleteLanguage(id).subscribe( (data) => {
-      if(data==null)
-      {
-        window.location.reload();
+  borrar(id: string) {
+    let aux = confirm("Esta Seguro de Borrar");
+    if (!aux) return;
+    this.language.deleteLanguage(id).subscribe((data) => {
+      if (data == null) {
+        this.loadLanguages(); 
       }
-    })
+    });
   }
 
-  actualizar(id:string){
-    let aux = confirm("Esta Seguro de Actualizar")
-    let body = 
-    {
-      abrev: "test Upt abrev",
-      name:  "test Upt name"
-    }    
-    if(!aux) return
-    this.language.updateLanguage(id, body).subscribe( (data) => {
-      if(data!=null)
-      {
-        window.location.reload();
-      }
-    })
+  actualizar(id: string) {
+    let aux = confirm("Esta Seguro de Actualizar");
+    if (!aux) return;
+    this.isEditing = true;
+    this.editRow = { ...this.dataSource.find((item: { id: string; }) => item.id === id) };
+  }
+
+  cancelarEdicion() {
+    this.isEditing = false;
+    this.editRow = null;
+  }
+
+  guardar() {
+    this.language.updateLanguage(this.editRow.id, this.editRow).subscribe(() => {
+      this.loadLanguages();
+      this.isEditing = false;
+      this.editRow = null;
+    });
   }
 }
