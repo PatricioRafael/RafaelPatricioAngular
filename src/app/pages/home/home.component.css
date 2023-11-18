@@ -190,6 +190,12 @@ body {
     border-right: 1px solid #000;
 }
 
+.container-form {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    background-color: #081b29;
+}
+
 .input {
     text-align: center;
     border: 1px solid;
@@ -201,8 +207,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #282828;
+    background-color: #081b29;
     color: #fff;
+    border: 2px solid #0ef;
+    box-shadow: 0 0 25px #0ef;
 }
 
 .table {
@@ -211,47 +219,75 @@ body {
     border-collapse: collapse;
     width: 30%;
     text-align: center;
+    border: 1px solid #0ef;
+    box-shadow: 0 0 25px #0ef;
 }
 
 .nom {
     margin-bottom: 20px;
-    background-color: #a6a6a6;
+    border: 2px solid #0ef;
+    background-color: #081b29;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0ef;
 }
 
 .enviar {
-    background-color: #a6a6a6;
-    border: none;
-    color: #282828;
+    background-color: #0ef;
+    border: 2px solid #0ef;
+    border-radius: 40px;
+    width: 70px;
+    height: 30px;
+    outline: none;
+    font-size: 13px;
+    color: #081b29;
 }
 
 .enviar:hover {
-    background-color: #5e2121;
+    background-color: #081b29;
     color: #fff;
+    box-shadow: 0 0 15px #0ef;
 }
 
 .table > thead {
-    background-color: #282828;
-    color: #fff;
+    background-color: #0ef;
+    color: #081b29;
 }
 
 .table > tbody {
-    background-color: 	#a6a6a6;
-}
-
-.edit {
-    background-color: #a6a6a6;
-    border: none;
-    color: #282828;
-    margin-right: 10px;
-}
-
-.edit:hover {
-    background-color: #282828;
+    background-color: 	#081b29;
     color: #fff;
 }
 
+.edit {
+    background-color: #0ef;
+    border: 2px solid #0ef;
+    border-radius: 40px;
+    width: 70px;
+    height: 30px;
+    outline: none;
+    font-size: 13px;
+    color: #081b29;
+    margin-left: 15px;
+}
+
+.edit:hover {
+    background-color: #081b29;
+    color: #fff;
+    box-shadow: 0 0 25px #0ef;
+}
+
 .elim {
-    background-color: #282828;
-    color: #a6a6a6;
+    background-color: #0ef;
+    color: #081b29;
     margin-right: 10px;
+    border: 2px solid #081b29;
+    border-radius: 15px;
+}
+
+.elim:hover {
+    background-color: #081b29;
+    color: #fff;
+    border: 1px solid #0ef;
+    box-shadow: 0 0 15px #0ef;
 }
