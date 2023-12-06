@@ -1,0 +1,45 @@
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #282828;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #fff;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #fff;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #ac3a3a;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  
+  button:hover {
+    background-color: #282828;
+    border: solid 1px #fff;
+  }  
