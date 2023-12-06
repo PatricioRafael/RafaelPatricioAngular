@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LanguagesService {
 
-  url: string = "https://apirest-a36f8-default-rtdb.firebaseio.com/";
+  url: string = "https://apirest-a36f8-default-rtdb.firebaseio.com/"; 
 
   constructor(private http: HttpClient) { }
 
@@ -28,10 +28,9 @@ export class LanguagesService {
     let delUrl = this.url + "/" + id + ".json"
     return this.http.delete(delUrl)
   }
-
   updateLanguage(id:string, body:any): Observable<any>
   {
     let uptUrl = this.url + "/" + id + ".json"
-    return this.http.put(uptUrl, body)
-  }  
+    return this.http.put(uptUrl,body)
+  }
 }
